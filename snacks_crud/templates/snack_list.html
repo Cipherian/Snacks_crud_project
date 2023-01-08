@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="snack-time">
+      <h1 class="snack-time-header">SNACK TIME</h1>
+    <a href="{% url 'create' %}" class="new-snack-button">
+      NEW SNACK
+    </a>
+    <div class="snacks-container">
+      {% for snack in snacks %}
+        <div class="snack">
+          <p class="snack-name">
+            <a href="{% url 'detail' snack.pk %}" class="snack-link">{{ snack.name }}</a>
+          </p>
+          <div class="snack-buttons">
+            <button onclick="location.href='{% url 'delete' snack.pk %}'" class="delete-button">DELETE</button>
+            <button onclick="location.href='{% url 'update' snack.pk %}'" class="update-button">UPDATE</button>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

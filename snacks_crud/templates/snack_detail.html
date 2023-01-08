@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a class="link" href="{% url 'list' %}">Home</a>
+        <div class="container">
+          <h2 class="title">{{ snacks.name }}</h2>
+          <p class="info">Author: {{ snacks.owner }}</p>
+          <p class="info">Description: {{ snacks.description }}</p>
+          <p class="info">Created: {{ snacks.created }}</p>
+          <p class="info">Updated: {{ snacks.updated }}</p>
+        </div>
+{% endblock content %}
