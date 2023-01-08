@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-container">
+    <a class="link" href="{% url 'list' %}">Home</a>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>Do you want to delete {{ snack.name }}?</p>
+        <input type="submit" value="DELETE">
+    </form>
+    </div>
+
+
+{% endblock content %}
