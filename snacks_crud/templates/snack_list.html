@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="snack-time">
-      <h1 class="snack-time-header">SNACK TIME</h1>
-    <a href="{% url 'create' %}" class="new-snack-button">
+<div class="bg-slate-500 h-screen w-screen">
+  <div class="flex flex-col items-center justify-center h-full">
+    <h1 class="text-2xl font-medium text-center">SNACK TIME</h1>
+    <a href="{% url 'create' %}" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
       NEW SNACK
     </a>
-    <div class="snacks-container">
+    <div class="mt-4 h-56 w-56">
       {% for snack in snacks %}
-        <div class="snack">
-          <p class="snack-name">
-            <a href="{% url 'detail' snack.pk %}" class="snack-link">{{ snack.name }}</a>
+        <div class="bg-white p-2 rounded-md">
+          <p class="text-lg font-medium">
+            <a href="{% url 'detail' snack.pk %}" class="text-blue-500 hover:text-blue-600">{{ snack.name }}</a>
           </p>
-          <div class="snack-buttons">
-            <button onclick="location.href='{% url 'delete' snack.pk %}'" class="delete-button">DELETE</button>
-            <button onclick="location.href='{% url 'update' snack.pk %}'" class="update-button">UPDATE</button>
+          <div class="flex justify-between">
+            <button onclick="location.href='{% url 'delete' snack.pk %}'" class="bg-red-500 text-white p-2 rounded-md hover:bg-red-600">DELETE</button>
+            <button onclick="location.href='{% url 'update' snack.pk %}'" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">UPDATE</button>
           </div>
         </div>
       {% endfor %}
     </div>
   </div>
+</div>
 {% endblock content %}
