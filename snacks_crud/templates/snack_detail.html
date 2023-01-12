@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a class="link" href="{% url 'list' %}">Home</a>
-        <div class="container">
-          <h2 class="title">{{ snacks.name }}</h2>
-          <p class="info">Author: {{ snacks.owner }}</p>
-          <p class="info">Description: {{ snacks.description }}</p>
-          <p class="info">Created: {{ snacks.created }}</p>
-          <p class="info">Updated: {{ snacks.updated }}</p>
+    <a class="text-blue-500 hover:text-blue-800, text-center" href="{% url 'list' %}">Home</a>
+        <div class="p-4 bg-gray-200 rounded-md">
+          <h2 class="text-lg font-medium">{{ snacks.name }}</h2>
+          <p class="text-sm text-gray-700">Author: {{ snacks.owner }}</p>
+          <p class="text-sm text-gray-700">Description: {{ snacks.description }}</p>
+          <p class="text-sm text-gray-700">Created: {{ snacks.created }}</p>
+          <p class="text-sm text-gray-700">Updated: {{ snacks.updated }}</p>
         </div>
 {% endblock content %}
