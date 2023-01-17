@@ -23,7 +23,7 @@ class SnackCreateView(CreateView):
 class SnackUpdateView(UpdateView):
     model = Snacks
     template_name ='update.html'
-    fields = ['name', 'description', 'price', 'owner']
+    fields = '__all__'
     success_url = reverse_lazy('list')
 
 class SnackDeleteView(DeleteView):
